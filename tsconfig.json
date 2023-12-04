@@ -1,14 +1,16 @@
 {
-  "extends": "./node_modules/electron-webpack/tsconfig-base.json",
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "jsx": "react",
-    "allowJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "@utils/*": ["src/common/utils/*"],
-      "@components/*": ["src/renderer/components/*"],
-      "@*": ["src/renderer/store/*"]
+    "extends": "./node_modules/electron-webpack/tsconfig-base.json",
+    "compilerOptions": {
+      "outDir": "dist",
+      "resolveJsonModule": true,
+      "jsx": "react",
+      "allowJs": true,
+      "baseUrl": ".",
+      "paths": {
+        "@utils/*": ["src/common/utils/*"],
+        "@components/*": ["src/renderer/components/*"],
+        "@*": ["src/renderer/store/*"]
+      }
     }
   }
-}
+  

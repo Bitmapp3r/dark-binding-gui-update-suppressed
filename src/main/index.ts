@@ -4,7 +4,10 @@ import minimist from 'minimist';
 import { isDev } from '@utils/env';
 
 import './lcu-toolkit';
-import { checkForUpdates } from './auto-update';
+
+// === Uncomment the following lines for auto updating: ===
+
+// import { checkForUpdates } from './auto-update';
 
 log.transports.file.level = 'debug';
 log.transports.console.level = isDev
@@ -20,7 +23,10 @@ if (!app.requestSingleInstanceLock()) {
 // create main BrowserWindow when electron is ready
 app.on('ready', () => {
   require('./binding-manager');
-  const { getMainWindow } = require('./main-window');
 
-  checkForUpdates(getMainWindow());
+  // === Uncomment the following lines for auto updating: ===
+
+//   const { getMainWindow } = require('./main-window');
+// Uncomment the following line to check for updates:
+//   checkForUpdates(getMainWindow());
 });

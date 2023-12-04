@@ -59,10 +59,9 @@ export const createReverseMap = (
 export const updateInputSettings = (
   settings: InputSettings,
   path: string,
-  nextValue: string[],
-  allowDuplicates = false
+  nextValue: string[]
 ) => {
-  const reverseMap = allowDuplicates ? {} : createReverseMap(settings);
+  const reverseMap = createReverseMap(settings);
 
   nextValue.map(normalizeKeybindingString).forEach(key => {
     if (reverseMap[key]) {
